@@ -24,6 +24,10 @@ if (process.env.NODE_ENV !== "production") app.use(morgan("dev"));
 
 app.get("/api/health", (req, res) => res.status(200).json({ status: "OK" }));
 
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Saniddhya Villa API is running 🎉" });
+});
+
 app.use("/api/villas", villaRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/payments", paymentRoutes);
