@@ -35,7 +35,7 @@ const Home = () => {
     navigate("/check-availability");
   };
 
-  if (loading) return <div className="p-6 text-center text-navy/60">Loading villa...</div>;
+  if (loading) return <LoadingScreen />;
   if (!villa) return <div className="p-6 text-center text-red-500">Could not load villa. Check your backend is running.</div>;
 
   return (
