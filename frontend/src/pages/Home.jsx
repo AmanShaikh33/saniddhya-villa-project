@@ -5,6 +5,7 @@ import { getVilla } from "../services/villaService";
 import { useBooking } from "../context/BookingContext";
 import { formatDate } from "../utils/formatDate";
 import GuestSelector from "../components/booking/GuestSelector";
+import LoadingScreen from "../components/common/LoadingScreen";
 
 const VILLA_ID = import.meta.env.VITE_VILLA_ID;
 

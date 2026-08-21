@@ -34,3 +34,19 @@
     @apply bg-gold text-navy font-semibold rounded-xl py-4 flex items-center justify-center gap-2 hover:bg-gold/90 transition-colors;
   }
 }
+
+@keyframes reveal-wipe {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  60% {
+    clip-path: inset(0 0% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+.animate-reveal-wipe {
+  animation: reveal-wipe 1.8s ease-in-out infinite;
+}
