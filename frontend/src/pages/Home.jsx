@@ -24,11 +24,13 @@ const Home = () => {
   const [showGuestSelector, setShowGuestSelector] = useState(false);
 
   useEffect(() => {
-    getVilla(VILLA_ID)
-      .then((res) => setVilla(res.data))
-      .catch((err) => console.error(err))
-      .finally(() => setLoading(false));
-  }, []);
+  const minDelay = new Promise((resolve) => setTimeout(resolve, 2000));
+
+  Promise.all([getVilla(VILLA_ID), minDelay])
+    .then(([res]) => setVilla(res.data))
+    .catch((err) => console.error(err))
+    .finally(() => setLoading(false));
+}, []);
 
   const handleCheckAvailability = () => {
     updateBooking({ villaId: VILLA_ID });
